@@ -1,0 +1,7 @@
+pokemon_dbt:
+  outputs:
+    dev:
+      type: duckdb
+      path: '~/pokemon_elt_project/data/pokemon.duckdb'
+      threads: 4
+  target: dev

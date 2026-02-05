@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: fct_pokemon
+    description: Comprehensive Pokemon fact table with all attributes and calculated metrics
+    columns:
+      - name: pokemon_id
+        description: Unique Pokemon identifier
+        tests:
+          - unique
+          - not_null
+      
+      - name: pokemon_name
+        description: Pokemon name
+        tests:
+          - not_null
+      
+      - name: total_stats
+        description: Sum of all base stats
+        tests:
+          - not_null
+      
+      - name: primary_type
+        description: Primary Pokemon type
+        tests:
+          - not_null
+  
+  - name: dim_type_analysis
+    description: Analysis of Pokemon by type
+    columns:
+      - name: type_name
+        description: Pokemon type
+        tests:
+          - unique
+          - not_null
+      
+      - name: pokemon_count
+        description: Number of Pokemon with this type
+        tests:
+          - not_null
+  
+  - name: fct_stat_rankings
+    description: Pokemon stat rankings and tiers
+    columns:
+      - name: pokemon_id
+        description: Pokemon identifier
+        tests:
+          - not_null
+      
+      - name: stat_name
+        description: Name of the stat being ranked
+        tests:
+          - not_null
+      
+      - name: stat_rank
+        description: Rank of this Pokemon for this stat
+        tests:
+          - not_null

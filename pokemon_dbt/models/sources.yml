@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw Pokemon data extracted from PokeAPI
+    schema: raw
+    tables:
+      - name: pokemon
+        description: Raw Pokemon base information
+        columns:
+          - name: id
+            description: Unique Pokemon ID
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Pokemon name
+            tests:
+              - not_null
+      
+      - name: pokemon_types
+        description: Pokemon type information
+        columns:
+          - name: pokemon_id
+            description: Pokemon ID
+            tests:
+              - not_null
+      
+      - name: pokemon_abilities
+        description: Pokemon abilities
+        columns:
+          - name: pokemon_id
+            description: Pokemon ID
+            tests:
+              - not_null
+      
+      - name: pokemon_stats
+        description: Pokemon base stats
+        columns:
+          - name: pokemon_id
+            description: Pokemon ID
+            tests:
+              - not_null
