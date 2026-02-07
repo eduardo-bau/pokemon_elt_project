@@ -1,2 +1,4 @@
 /.venv
-/data
+data/
+transform/pokemon_dbt/logs
+transform/pokemon_dbt/target
