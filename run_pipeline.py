@@ -15,7 +15,7 @@ class PipelineOrchestrator:
     def __init__(self):
         self.project_root = Path(__file__).parent
         self.extract_script = self.project_root / "extract" / "extract_pokemon.py"
-        self.dbt_project = self.project_root / "pokemon_dbt"
+        self.dbt_project = self.project_root / "transform" / "pokemon_dbt"
     
     def run_extract(self):
         """Run extraction phase"""
